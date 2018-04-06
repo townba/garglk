@@ -62,6 +62,7 @@
 - (BOOL) initWindow: (pid_t) processID
               width: (unsigned int) width
              height: (unsigned int) height
+         fullscreen: (BOOL) fullscreen
              retina: (int) retina;
 
 - (NSEvent *) getWindowEvent: (pid_t) processID;

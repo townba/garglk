@@ -611,6 +611,7 @@ static BOOL isTextbufferEvent(NSEvent * evt)
 - (BOOL) initWindow: (pid_t) processID
               width: (unsigned int) width
              height: (unsigned int) height
+         fullscreen: (BOOL) fullscreen
              retina: (int) retina
 {
     if (!(processID > 0))
@@ -637,6 +638,8 @@ static BOOL isTextbufferEvent(NSEvent * evt)
     [window center];
     [window setReleasedWhenClosed: YES];
     [window setDelegate: self];
+    if (fullscreen)
+        [window toggleFullScreen: self];
 
     [windows setObject: window forKey: [NSNumber numberWithInt: processID]];
 
